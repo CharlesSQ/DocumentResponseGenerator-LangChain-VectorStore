@@ -1,5 +1,5 @@
 import os
-from apiKey import apiKey
+from apiKey import openai_api_key
 
 import streamlit as st
 from langchain.chat_models import ChatOpenAI
@@ -10,7 +10,7 @@ from langchain.agents.agent_toolkits import (
     create_vectorstore_agent, VectorStoreToolkit, VectorStoreInfo)
 
 # Set API key for OpenAI
-os.environ["OPENAI_API_KEY"] = apiKey
+os.environ["OPENAI_API_KEY"] = openai_api_key
 
 
 # App framework
