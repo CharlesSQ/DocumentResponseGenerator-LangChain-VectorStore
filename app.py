@@ -1,5 +1,5 @@
 import os
-from apiKey import openai_api_key
+from config import openai_api_key
 
 import streamlit as st
 from langchain.chat_models import ChatOpenAI
