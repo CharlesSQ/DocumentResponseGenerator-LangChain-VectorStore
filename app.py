@@ -1,5 +1,5 @@
 import os
-from config import openai_api_key
+from config import OPENAI_API_KEY
 
 import streamlit as st
 from langchain.chat_models import ChatOpenAI
@@ -10,7 +10,7 @@ from langchain.agents.agent_toolkits import (
     create_vectorstore_agent, VectorStoreToolkit, VectorStoreInfo)
 
 # Set API key for OpenAI
-os.environ["OPENAI_API_KEY"] = openai_api_key
+os.environ["OPENAI_API_KEY"] = OPENAI_API_KEY
 
 
 # App framework
@@ -48,7 +48,7 @@ PREFIX = """You are an agent designed to answer questions about sets of document
 You have access to tools for interacting with the documents, and the inputs to the tools are questions.
 """
 agent_executor = create_vectorstore_agent(
-    llm=llm_chat, toolkit=toolkit, prefix=PREFIX, verbose=True)
+    llm=llm_chat, toolkit=toolkit, prefix=PREFIX)
 
 # Check Streamlit input
 if user_prompt:
